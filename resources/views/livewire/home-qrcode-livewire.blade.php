@@ -4,7 +4,7 @@
 <div class="card mb-4"> 
     <div class="card-body px-0 pb-2">
         <div class="table-responsive">
-            <h4 class="text-center">Qrcode orqali sotilgan mahsulotlar </h4>
+            <h4 class="text-center">Products sold via QRcode </h4>
            <table class="table align-items-center mb-0">
            <thead>
               <tr>

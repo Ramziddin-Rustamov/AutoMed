@@ -22,8 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('can:super-admin');
 Route::get('/seller', [ShopSellerController::class, 'index'])->name('seller.index')->middleware('can:seller'); // for seller
-Route::get('/master/code', [ShopSellerController::class, 'qrcode'])->name('seller.qrcode')->middleware('can:seller'); // for seller
-Route::get('/seller/code', [ServiceController::class, 'qrcode'])->name('master.qrcode')->middleware('can:master'); // for seller
+// Route::get('/seller/code', [ServiceController::class, 'qrcode'])->name('master.qrcode')->middleware('can:master'); // for seller
+// Route::get('/master/code', [ShopSellerController::class, 'qrcode'])->name('seller.qrcode')->middleware('can:seller'); // for seller
 Route::get('/products', [ProductController::class, 'index'])->name('product.index')->middleware('can:seller'); // for seller
 Route::get('/service', [ServiceController::class, 'index'])->name('service.index')->middleware('can:master'); //for masters
 Route::put('/client/{id}', [ClientController::class, 'update'])->name('client.update')->middleware('can:super-admin'); // for super admin

@@ -19,7 +19,7 @@ class ClientFactory extends Factory
             'car_number' => $this->faker->numerify('30-H###SA'),
             'client_number' => $this->faker->phoneNumber(),
             'status' => $this->faker->numberBetween(0, 1),
-            'user_id' => User::factory(),
+            'user_id' => User::all()->random()->id,
             'published_by' => $this->faker->name()
         ];
     }

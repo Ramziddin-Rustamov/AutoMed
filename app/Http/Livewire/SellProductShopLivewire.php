@@ -253,24 +253,24 @@ class SellProductShopLivewire extends Component
         ]);
 
         
-        $myfile = fopen("C:\index.html", "w");
-        $txt = "AutoMed ni tanlaganingiz uchun RAHMAT ! " . "<br />" .
-            "Mijozimiz Telefoni : " . $this->formClientPhone . "<br />" .
-            "Holati : " . $this->formStatus . "<br />" .
-            "Xarid qilindi:" . "<br />" .
-            $this->formProduct1 . '' . '- ' . 'dan - ' . $this->formNumbers1 . '' . 'ta ' . '' . '' . $this->totalPrice1 ."<br />" .
-            $this->formProduct2 . '' . '-' . $this->formNumbers2 . '' . '' . '' . $this->totalPrice2 . "<br />" .
-            $this->formProduct3 . '' .  '' . $this->formNumbers3 . '' . '' . '' . '' . $this->totalPrice3 . "<br />" .
-            $this->formProduct4 . '' . '' .  $this->formNumbers4 . '' . '' . '' . '' . $this->totalPrice4 . "<br />" .
-            "Umumiy Qiymat : " .  $this->allTotalPrice . "<br />" .
-            "Xizmat ko`rsatdi : " . Auth::user()->name . "<br />" .
-            "Sana : " . now() . "<br />";
-         fwrite($myfile, $txt);
-         shell_exec("py C:\printer.py");
+        // $myfile = fopen("C:\index.html", "w");
+        // $txt = "AutoMed ni tanlaganingiz uchun RAHMAT ! " . "<br />" .
+        //     "Mijozimiz Telefoni : " . $this->formClientPhone . "<br />" .
+        //     "Holati : " . $this->formStatus . "<br />" .
+        //     "Xarid qilindi:" . "<br />" .
+        //     $this->formProduct1 . '' . '- ' . 'dan - ' . $this->formNumbers1 . '' . 'ta ' . '' . '' . $this->totalPrice1 ."<br />" .
+        //     $this->formProduct2 . '' . '-' . $this->formNumbers2 . '' . '' . '' . $this->totalPrice2 . "<br />" .
+        //     $this->formProduct3 . '' .  '' . $this->formNumbers3 . '' . '' . '' . '' . $this->totalPrice3 . "<br />" .
+        //     $this->formProduct4 . '' . '' .  $this->formNumbers4 . '' . '' . '' . '' . $this->totalPrice4 . "<br />" .
+        //     "Umumiy Qiymat : " .  $this->allTotalPrice . "<br />" .
+        //     "Xizmat ko`rsatdi : " . Auth::user()->name . "<br />" .
+        //     "Sana : " . now() . "<br />";
+        //  fwrite($myfile, $txt);
+        //  shell_exec("py C:\printer.py");
 
         //gaving users sucess message !
 
-        Alert::success('Muvaffaqiyatli !', ' Mahsulot Sotildi !');
+        Alert::success('success', ' Mahsulot Sotildi !');
 
         //for check and delete from date base the numbers column 
 

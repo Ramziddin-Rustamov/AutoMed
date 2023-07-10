@@ -8,7 +8,7 @@
         <div class="container">
           <div class="card-header pb-0 d-flex justify-content-between">
             
-            <h3> <i class="fas fa-list fa-1"></i> Mahsulotlar Jadvali</h3> 
+            <h3> <i class="fas fa-list fa-1"></i> Table of Products</h3> 
               </div>
                <div class="row">
                  <div class="col-md-12">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="input-group mb-3">
-                        <label class="input-group text-lg" for="inputGroupSelect01">{{ _('Nomi') }}</label>
+                        <label class="input-group text-lg" for="inputGroupSelect01">{{ _('Name') }}</label>
                         <input required type="text"  wire:model.lazy="name" name="name" id="name" class="form-control">
                     </div>
                     @error('name')
@@ -31,7 +31,7 @@
                 </div>
                     <div class="col-md-12">
                         <div class="input-group mb-3">
-                            <label class="input-group text-lg" for="inputGroupSelect03">{{ _('Soni ') }}</label>
+                            <label class="input-group text-lg" for="inputGroupSelect03">{{ _('Number ') }}</label>
                             <input required type="numbers" wire:model.lazy="numbers" name="numbers" id="numbers" class="form-control">
                         </div>
                         @error('numbers')
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="input-group mb-3">
-                            <label class="input-group text-lg" for="inputGroupSelect04">{{ _('Kelgan Narxi') }}</label>
+                            <label class="input-group text-lg" for="inputGroupSelect04">{{ _('comming cost') }}</label>
                             <input required type="number" wire:model.lazy="comingCost" name="comingCost" class="form-control">
                         </div>
                         @error('comingCost')
@@ -49,7 +49,7 @@
                     </div>
                      <div class="col-md-12">
                         <div class="input-group mb-3">
-                            <label class="input-group text-lg" for="inputGroupSelect05">{{ _('Sotilish  Narxi') }}</label>
+                            <label class="input-group text-lg" for="inputGroupSelect05">{{ _('Selling cost') }}</label>
                             <input required type="number" wire:model.lazy="sellingCost" name="sellingCost" id="sellingCost" class="form-control">
                         </div>
                         @error('selling_cost')
@@ -65,7 +65,7 @@
                     
                     <div class="col-md-12">
                         <div class="d-flex justify-content-center justify-content-md-end">
-                            <button wire:click="addProduct" type="submit" class="btn btn-primary ">Saqlash</button>
+                            <button wire:click="addProduct" type="submit" class="btn btn-primary ">Save</button>
                         </div>
                         <hr>
                     </div>
@@ -83,16 +83,16 @@
                   <thead>
                     <tr>
                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> <i class="fas fa-trash"></i> </th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nomi</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Soni</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">QR-Kodi
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Numbers</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">QR-code
                       </th>
                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Kelgan Narxi</th>
+                        Arrival Price</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Sotish narxi</th>
+                          Selling price</th>
                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Foyda</th>
+                          Benefit</th>
                     </tr>
                   </thead>
                   <tbody class="table-hover">
@@ -142,7 +142,7 @@
                   </div> --}}
               </div>
                @else
-                  <p class="text-center text-danger">Hozircha mahsulot yo`q</p>
+                  <p class="text-center text-danger">There are no products yet !</p>
               @endif
             </div>
           </div>

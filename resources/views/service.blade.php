@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Xizmatlar')
+@section('title', 'Services')
 @section('content')
   @livewire('service-livewire')
 @endsection

@@ -28,7 +28,6 @@ class ProductsLivewire extends Component
     public function updatedcodeed($codeed)
     {
         $this->codeed = $codeed;
-        // dd($this->some);
     }
 
     public function updatedname($name)
@@ -40,7 +39,6 @@ class ProductsLivewire extends Component
     public function updatednumbers($number)
     {
         $this->numbers = $number;
-        // dd($this->numbers);
     }
 
     public function updatedcomingCost($cost)
@@ -84,7 +82,7 @@ class ProductsLivewire extends Component
             'profit' => intval($this->sellingCost) - intval($this->comingCost)
         ]);
         $this->products->prepend($createdProduct);
-        session()->flash('Muvaffaqiyatli !',  $this->name . ' - maxsulotdan ' . $this->numbers . ' ta  bazaga  qushildi ! Qoladigan foyda  xar bir maxsulotdan  ' . $this->profit . ' Umumiy sof foyda -  ' . $this->overalProfit . ' so`m');
+        session()->flash('success',  $this->name . ' - maxsulotdan ' . $this->numbers . ' ta  bazaga  qushildi ! Qoladigan foyda  xar bir maxsulotdan  ' . $this->profit . ' Umumiy sof foyda -  ' . $this->overalProfit . ' so`m');
         $this->name = "";
         $this->codeed = "";
         $this->numbers = "";    
@@ -98,7 +96,7 @@ class ProductsLivewire extends Component
         if($product){
             $this->products = $this->products->where('id', '!=', $productId);
             $product->delete();
-            Alert::success('Muvaffaqiyatli !', 'Ma`lumot o`chirildi !');
+            Alert::success('success', 'Ma`lumot o`chirildi !');
         }
     }
 

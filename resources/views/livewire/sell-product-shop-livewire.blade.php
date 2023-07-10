@@ -6,10 +6,10 @@
             <div class="card-header pb-0 d-flex justify-content-center">
               @auth
                @can('super-admin')
-                 <h6 class="text-center">Satishdan <i class="fas fa-sell"></i></h6>
+                 <h6 class="text-center">From Selling  <i class="fas fa-sell"></i></h6>
                @endcan
                  @can('seller')
-                 <h6 class="text-center">Sotish ! <i class="fas fa-sell"></i></h6>
+                 <h6 class="text-center">Selling  ! <i class="fas fa-sell"></i></h6>
                @endcan
               @endauth
             </div>
@@ -22,10 +22,10 @@
                       <div class="d-flex justify-content-start text-danger">{{ number_format($totalPrice1) }}</div>
                      <div class="col-md-12">
                         <div class="input-group mb-3"><i class="fas fa-cart-plus"></i>                      
-                            <label class="input-group text-lg" for="inputGroupSelect111102">{{ _('Mahsulot 1') }}</label>
+                            <label class="input-group text-lg" for="inputGroupSelect111102">{{ _('Product 1') }}</label>
                             <select required wire:model.lazy="formProduct1" name="" id="" class="form-control">
                            @if(count($products))
-                             <option  selected class="form-control border-2 text-lg py-2 my-2">Qaysi Mahsulot ?</option>
+                             <option  selected class="form-control border-2 text-lg py-2 my-2">Which product?</option>
                               @foreach($products as $product) 
                                  <option  value="{{ $product->name }}" class="form-control  text-lg py-2 my-2">{{ $product->name }} <br> <span class="text-danger"> ( Narxi - {{ number_format($product->selling_cost) }})</span> <hr></option>
                             @endforeach
@@ -38,9 +38,9 @@
                     </div>
                     <div class="col-md-12 border-bottom-2">
                         <div class="input-group mb-3"><i class="fab fa-product-hunt"></i>
-                            <label class="input-group text-lg" for="inputGroupSelect02">{{ _('Miqdor 1') }} 
+                            <label class="input-group text-lg" for="inputGroupSelect02">{{ _('Quantity 1') }} 
                             @if($product1NumberMax)
-                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Skalatda  qolgan {{ number_format($product1NumberMax) }}  !</span>
+                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Productleft in the warehouse  {{ number_format($product1NumberMax) }}  !</span>
                             @endif
                             </label>        
                             <input required type="number" wire:model.lazy="formNumbers1"  name="" id="sellingCost " class="form-control">
@@ -54,15 +54,15 @@
                     <div class="d-flex justify-content-start text-danger">{{ number_format($totalPrice2)}}</div>
                     <div class="col-md-12">
                         <div class="input-group mb-3"><i class="fas fa-cart-plus"></i>
-                            <label class="input-group text-lg" for="inputGroupSelect11102">{{ _('Mahsulot 2') }}</label>
+                            <label class="input-group text-lg" for="inputGroupSelect11102">{{ _('Product 2') }}</label>
                             <select wire:model.lazy="formProduct2" name="" id="" class="form-control">
                            @if($baseproduct2)
-                             <option selected class="form-control form-control text-lg py-2 my-2">Qaysi Mahsulot ?</option>
+                             <option selected class="form-control form-control text-lg py-2 my-2">Which product?</option>
                               @foreach($baseproduct2 as $product) 
                                  <option value="{{ $product->name }}" class="form-control form-control text-lg py-2 my-2">{{ $product->name }} <br> <span class="text-danger"> ( Narxi - {{ number_format($product->selling_cost) }})</span> <hr> </option>
                             @endforeach
                             @else
-                                 <option class="form-control disabled" disabled>Mahsulot Yo'q </option>
+                                 <option class="form-control disabled" disabled>Product Yo'q </option>
                            @endif
                             </select>
                           </div>
@@ -74,7 +74,7 @@
                         <div class="input-group mb-3"><i class="fab fa-product-hunt"></i>
                             <label class="input-group text-lg" for="inputGroupSelect0122">{{ _('Miqdor 2') }}
                              @if($product2NumberMax)
-                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Skalatda  qolgan {{( number_format($product2NumberMax)) }}  !</span>
+                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Productleft in the warehouse {{( number_format($product2NumberMax)) }}  !</span>
                             @endif
                             </label>
                             <input  type="number" wire:model.lazy="formNumbers2" name="" id="sellingCost" class="form-control">
@@ -86,15 +86,15 @@
                     <div class="d-flex justify-content-start text-danger">{{ number_format($totalPrice3) }}</div>
                     <div class="col-md-12">
                         <div class="input-group mb-3"><i class="fas fa-cart-plus"></i>
-                            <label class="input-group text-lg" for="inputGroupSelect1102">{{ _('Mahsulot 3') }} </label>
+                            <label class="input-group text-lg" for="inputGroupSelect1102">{{ _('Product 3') }} </label>
                             <select  wire:model.lazy="formProduct3" name="" id="" class="form-control">
                            @if($baseproduct3)
-                             <option selected class="form-control form-control text-lg py-2 my-2">Qaysi Mahsulot ?</option>
+                             <option selected class="form-control form-control text-lg py-2 my-2">Which product?</option>
                               @foreach($baseproduct3 as $product) 
                                  <option value="{{ $product->name }}" class="form-control form-control text-lg py-2 my-2">{{ $product->name }} <br> <span class="text-danger"> ( Narxi - {{ number_format($product->selling_cost) }})</span> <hr> </option>
                             @endforeach
                              @else
-                                 <option class="form-control disabled" disabled>Mahsulot Yo'q </option>
+                                 <option class="form-control disabled" disabled>Product Yo'q </option>
                            @endif
                             </select>
                           </div>
@@ -106,7 +106,7 @@
                         <div class="input-group mb-3"><i class="fab fa-product-hunt"></i>
                             <label class="input-group text-lg" for="inputGroupSelect01222">{{ _('Miqdor 3') }}
                              @if($product3NumberMax)
-                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Skalatda  qolgan {{number_format($product3NumberMax) }}  !</span>
+                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Productleft in the warehouse {{number_format($product3NumberMax) }}  !</span>
                             @endif
                             </label>
                             <input  type="number" wire:model.lazy="formNumbers3" name="" id="sellingCost" class="form-control">
@@ -118,15 +118,15 @@
                     <div class="d-flex justify-content-start text-danger">{{number_format( $totalPrice4) }}</div>
                     <div class="col-md-12">
                         <div class="input-group mb-3"><i class="fas fa-cart-plus"></i>
-                            <label class="input-group text-lg" for="inputGroupSelect102">{{ _('Mahsulot 4 '  ) }} </label>
+                            <label class="input-group text-lg" for="inputGroupSelect102">{{ _('Product 4 '  ) }} </label>
                             <select wire:model.lazy="formProduct4" name="" id="" class="form-control">
                            @if($baseproduct4)
-                             <option selected class="form-control form-control text-lg py-2 my-2">Qaysi Mahsulot ?</option>
+                             <option selected class="form-control form-control text-lg py-2 my-2">Which product?</option>
                               @foreach($baseproduct4 as $product) 
                                  <option value="{{ $product->name }}" class="form-control form-control text-lg py-2 my-2">{{ $product->name }} <br> <span class="text-danger"> ( Narxi - {{ number_format($product->selling_cost) }})</span> <hr> </option>
                             @endforeach
                              @else
-                                 <option class="form-control disabled" disabled>Mahsulot Yo'q </option>
+                                 <option class="form-control disabled" disabled>No Product </option>
                            @endif
                             </select>
                           </div>
@@ -138,7 +138,7 @@
                         <div class="input-group mb-3"><i class="fab fa-product-hunt"></i>
                             <label class="input-group text-lg" for="inputGroupSelect0122q2">{{ _('Miqdor 4') }}
                              @if($product4NumberMax)
-                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Skalatda  qolgan {{ number_format($product4NumberMax) }}  !</span>
+                             <span style="position: absolute;z-index: 100; right: -1px;" class="text-danger">  Productleft in the warehouse {{ number_format($product4NumberMax) }}  !</span>
                             @endif
                             </label>
                             <input  type="number" wire:model.lazy="formNumbers4" name="" id="sellingCost" class="form-control">
@@ -153,8 +153,8 @@
                             <label class="input-group" for="inputGroupSelect01 form-control text-lg py-2 my-2">{{ _('Holati') }}</label>
                             <select required wire:model.lazy="formStatus" name="" id="" class="form-control">                
                              <option selected class="form-control text-lg"></option>
-                             <option  value="Naxt" class="form-control text-lg py-2 my-2">Naxt to'landi <i class="fas fa-money-bill"></i></option>
-                             <option value="Qarz" class="form-control text-lg py-2 my-2">Qarzga xizmat ko'rsatildi !</option>
+                             <option  value="Naxt" class="form-control text-lg py-2 my-2">The money was paid <i class="fas fa-money-bill"></i></option>
+                             <option value="Qarz" class="form-control text-lg py-2 my-2">The loan was serviced!</option>
                             </select>
                           </div>
                         @error('formStatus')
@@ -164,7 +164,7 @@
                     @if($phoneRequired)
                     <div class="col-md-12">
                         <div class="input-group mb-3"> <i class="fas fa-phone"></i>
-                            <label class="input-group" for="inputGroupSelect04">{{ _('Mijoz Telefoni Raqami') }}</label>
+                            <label class="input-group" for="inputGroupSelect04">{{ _('Customer Phone Number') }}</label>
                             <input required type="number" wire:model.lazy="formClientPhone" name="formClientPhone" class="form-control">
                         </div>
                         @error('formClientPhone')
@@ -176,14 +176,14 @@
                         <div class="d-flex  justify-content-between">
                             <div class="text-success">
                               @if($allTotalPrice)
-                              Umumiy Qiymat -  {{ $allTotalPrice }}
+                              Total Value-  {{ $allTotalPrice }}
                               @endif
                             </div>
                         </div>
                         <div class="col-md-12">
                           <div>
                             {{-- <button type="submit" class="btn btn-primary ">Sotish !<i class="fas fa-check"></i></button> --}}
-                            <button type="submit" class="btn btn-primary btn-lg btn-block"><h3>Sotish </h3> </button>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><h3>Sell </h3> </button>
                          </div>
                         </div>
                         <hr>
@@ -211,18 +211,18 @@
                 <table class="table align-items-center mb-0 table-hover ">
                   <thead class="table-success text-dark">
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mijoz tel raqami
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Customer phone number
                         <input type="text" wire:model="searchPhone" id="" class="form-control">
                       </th>
                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Olgan Mahsuloti</th>
+                        Received Product</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Sanasi</th>
+                          The date</th>
                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Holati</th> 
+                          Status</th> 
                        @can('super-admin')
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Xabar</th> 
+                            Message</th> 
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                         + / -</th>  
                        @endcan        
@@ -237,15 +237,15 @@
                       </td>
 
                       <td class="align-middle  text-sm"> 
-                       Narxi - {{ number_format(floatval($value->total1price) / floatval( $value->numproduct1)) }} , {{$value->product1  }} - dan , <span > {{ $value->numproduct1 }} ta </span><span> , Umumiy = {{ number_format($value->total1price) }}</span> <br>
+                       Narxi - {{ number_format(floatval($value->total1price) / floatval( $value->numproduct1)) }} , {{$value->product1  }} - dan , <span > {{ $value->numproduct1 }} ta </span><span> , overall = {{ number_format($value->total1price) }}</span> <br>
                        @if($value->total2price)
-                       Narxi - {{ number_format(floatval($value->total2price) / floatval( $value->numproduct2)) }} , {{$value->product2  }} - dan , <span > {{ $value->numproduct2 }} ta </span><span> , Umumiy = {{ number_format($value->total2price) }}</span> <br>
+                       Narxi - {{ number_format(floatval($value->total2price) / floatval( $value->numproduct2)) }} , {{$value->product2  }} - dan , <span > {{ $value->numproduct2 }} ta </span><span> , overlall = {{ number_format($value->total2price) }}</span> <br>
                        @endif
                        @if($value->numproduct3)
-                         Narxi - {{ number_format(floatval($value->total3price) / floatval( $value->numproduct3)) }} , {{$value->product3  }} - dan , <span > {{ $value->numproduct3 }} ta </span><span> , Umumiy = {{ number_format($value->total3price) }}</span> <br>
+                         Narxi - {{ number_format(floatval($value->total3price) / floatval( $value->numproduct3)) }} , {{$value->product3  }} - dan , <span > {{ $value->numproduct3 }} ta </span><span> , overlall = {{ number_format($value->total3price) }}</span> <br>
                        @endif
                        @if($value->numproduct4)
-                       Narxi - {{ number_format(floatval($value->total4price) / floatval( $value->numproduct4)) }} , {{$value->product4  }} - dan , <span > {{ $value->numproduct4 }} ta </span><span> , Umumiy = {{  number_format($value->total4price) }}</span> <br>
+                       Narxi - {{ number_format(floatval($value->total4price) / floatval( $value->numproduct4)) }} , {{$value->product4  }} - dan , <span > {{ $value->numproduct4 }} ta </span><span> , overlall = {{  number_format($value->total4price) }}</span> <br>
                        @endif
                        Umumiy qiymati = {{  number_format(floatval( $value->total1price) +floatval( $value->total2price)+floatval( $value->total3price)+floatval( $value->total4price))}} <br>
                       </td>     
@@ -255,12 +255,12 @@
                      <td class="align-middle text-center text-sm">
                         @if($value->status == 'Naxt')
                         <span class="badge badge-sm bg-gradient-success">
-                                Naxt 
+                                Paid 
                         </span>
                          @endif
                           @if($value->status == 'Qarz')
                         <span class="badge badge-sm bg-gradient-danger">
-                                Qarz
+                                Loan
                         </span>
                          @endif    
                       </td> 
@@ -278,7 +278,7 @@
                        <form action="{{ route('sell.update',['id'=>$value->id]) }}" method="POST">
                            @csrf
                            @method('put')
-                            <button type="submit" class="btn btn-primary" >To'landi ?! </button>
+                            <button type="submit" class="btn btn-primary" >Paid  ?! </button>
                        </form>
                       </td>
                       @else
@@ -295,7 +295,7 @@
                    @endforeach
                   </tbody>
                    @else
-                      <p class="text-center text-danger">Sotilgani  yo`q</p>
+                      <p class="text-center text-danger">Not sold </p>
                     @endif  
                 </table>
               </div> 

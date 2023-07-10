@@ -11,8 +11,4 @@ class ShopSellerController extends Controller
     {
         return view('sell');
     }
-
-    public function qrcode(){
-        return view('sell-qr');
-    }
 }

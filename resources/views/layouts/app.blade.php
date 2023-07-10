@@ -52,14 +52,10 @@
                                     <a class="nav-link" href="{{ route('register') }}"><h4>Register</h4></a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}"><h4>Boshqarish <i class="fas fa-crash"></i></h4> </a>
+                                    <a class="nav-link" href="{{ route('home') }}"><h4>Management <i class="fas fa-crash"></i></h4> </a>
                                 </li>
                           @endcan
                            @can('seller')
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('seller.qrcode') }}"><h4>{{ __('QR orqali sotish !') }}</h4></a>
-                                </li>
 
                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('seller.index') }}"><h4>{{ __('Sotish !') }}</h4></a>
@@ -72,10 +68,7 @@
                           @endcan
                            @can('master')
                                <li class="nav-item ">
-                                    <a class="nav-link {{ (Request::is('service') ? 'active underline' : '') }}" href="{{ route('service.index') }}"><h4>Mexaniklar</h4></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('master.qrcode') }}"><h4>{{ __('QR orqali sotish !') }}</h4></a>
+                                    <a class="nav-link {{ (Request::is('service') ? 'active underline' : '') }}" href="{{ route('service.index') }}"><h4>Mechanics</h4></a>
                                 </li>
                           @endcan
                             <li class="nav-item dropdown">
@@ -88,7 +81,7 @@
                                     <a  class="dropdown-item " href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                                  document.getElementById('logout-form').submit();">
-                                        {{ __('Chiqish ') }} <i class="svg-inline--fa fa-person-to-portal fa-xl"></i>
+                                        {{ __('logout ') }} <i class="svg-inline--fa fa-person-to-portal fa-xl"></i>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -97,7 +90,6 @@
                                     </form>
                                 </div>
                             </li>
-                            
                         @endguest
                     </ul>
                 </div>

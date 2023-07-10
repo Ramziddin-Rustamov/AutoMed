@@ -67,8 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'GMT+7',
-
+    'timezone' => 'Europe/Warsaw',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -175,6 +174,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
+        Livewire\LivewireServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

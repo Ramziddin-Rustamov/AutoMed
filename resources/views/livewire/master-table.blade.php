@@ -3,23 +3,23 @@
       <table class="table align-items-center mb-0">
       <thead>
          <tr>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ismi !
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name !
                <input type="text" wire:model="name" class="form-control">
             </th>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Xizmat ko'rsatgan mijozlar.
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Served customers.
                {{-- <input type="text" wire:model="number" class="form-control"> --}}
                   </th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ishladi
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">He worked
                {{-- <input type="text" wire:model="earn" class="form-control"> --}}
 
             </th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ishga keldi !
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Came to work !
                <input type="date" wire:model="date" class="form-control">
 
             </th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                   <i class="fas fa-trash"> </i> <br>
-                  O'chirish
+                  Delete
             </th>
          </tr>
       </thead>
@@ -39,16 +39,12 @@
             </td>
             <td class="align-middle text-center text-sm">
             <span class="text-xs font-weight-bold"> 
-               <?
-               $sum = 0;
-               ?>
-               @foreach($key->price as $amount)
-              <?
-                $sum +=$amount->totalPrice;
-              ?>
-               @endforeach
-               <?=number_format($sum) ?>
-               so'm
+             @empty($key->price)
+             <p>This is master hasn't do any service</p>
+             @else 
+             {{-- {{dd($key->price)}} --}}
+             @endempty
+             {{-- {{dd($key->price)}} --}}
             </span>
             </td>
             <td class="align-middle">
@@ -64,7 +60,7 @@
          </tr>
          @endforeach
          @else
-         <h4 class="text-center">Hozircha mexaniklarimiz yo'q !</h4>
+         <h4 class="text-center">We have no mechanics yet!</h4>
          @endif
       </tbody>
       </table>
